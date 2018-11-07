@@ -1,0 +1,9 @@
+{
+    "body": {
+        "email":"thissucks@mailinator.com",
+        "userId":"983bfb50-e27c-11e8-b2ae-8b4b7af5efdb",
+        "projectids": [
+            "project3", "project4"
+        ]        
+    }
+}

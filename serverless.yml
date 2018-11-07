@@ -1,0 +1,80 @@
+# NOTE: update this with your service name
+service: project-management-api2
+
+# Use the serverless-webpack plugin to transpile ES6
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+# serverless-webpack configuration
+# Enable auto-packing of external modules
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: prod
+  region: eu-west-2
+  # To load environment variables externally
+  # rename env.example to env.yml and uncomment
+  # the following line. Also, make sure to not
+  # commit your env.yml.cmd
+  #
+  #environment: ${file(env.yml):${self:provider.stage}}
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: 
+        - "arn:aws:dynamodb:us-east-1:*:*"
+
+functions:
+  createUser:
+    handler: createUser.main
+    events:
+      - http:
+          path: createUser
+          method: post
+          cors: true
+          authorizer: aws_iam
+  getUserProjects:
+    handler: getUserprojects.main
+    events:
+      - http:
+          path: getUserProjects
+          method: get
+          cors: true
+          authorizer: aws_iam
+  # getUserProjects:
+  #   handler: getUserProjects.main
+  #   events:
+  #     - http:
+  #         path: getUserProjects
+  #         method: get
+  #         authorizer: aws_iam
+  updateUserProjects:
+    handler: updateUserProjects.main
+    events:
+      - http:
+          path: updateUserProjects
+          method: put
+          authorizer: aws_iam
+  # updateUserName:
+  #   handler: updateUserName.main
+  #   events:
+  #     - http:
+  #         path: updateUserName/{id}
+  #         method: put
+  #         authorizer: aws_iam
+  

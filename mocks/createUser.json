@@ -1,0 +1,9 @@
+{
+  "body": {
+    "projectids": [
+      "project1", "project2"
+    ],
+    "email":"thissucks@mailinator.com",
+    "name":"John Legend"
+  }
+}
