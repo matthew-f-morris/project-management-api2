@@ -48,11 +48,11 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
-  getUserProjects:
-    handler: getUserprojects.main
+  getUserSkills:
+    handler: getUserSkills.main
     events:
       - http:
-          path: getUserProjects
+          path: getUserSkills
           method: get
           cors: true
           authorizer: aws_iam
@@ -69,12 +69,39 @@ functions:
       - http:
           path: updateUserProjects
           method: put
+          cors: true
           authorizer: aws_iam
-  # updateUserName:
-  #   handler: updateUserName.main
-  #   events:
-  #     - http:
-  #         path: updateUserName/{id}
-  #         method: put
-  #         authorizer: aws_iam
+  createProject:
+    handler: createProject.main
+    events:
+      - http:
+          path: createProject
+          method: post
+          cors: true
+          authorizer: aws_iam
+  getProject:
+    handler: getProject.main
+    events:
+      - http:
+          path: getProject
+          method: get
+          cors: true
+          authorizer: aws_iam
+  getProjectsUser:
+    handler: getProjectsUser.main
+    events:
+      - http:
+          path: getProjectsUser
+          method: get
+          cors: true
+          authorizer: aws_iam
+  updateProjectStatus:
+    handler: updateProjectStatus.main
+    events:
+      - http:
+          path: updateProjectStatus
+          method: put
+          cors: true
+          authorizer: aws_iam
+
   

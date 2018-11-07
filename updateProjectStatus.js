@@ -2,19 +2,19 @@ import * as dynamoDbLib from "./libs/dynamodb-lib";
 import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context) {
+
     const data = (event.body)
     const params = {
-    TableName: "user_data",    
+    TableName: "project_data",    
     Key: {
-      userId: data.userId,
-      email: data.email
+      project_id: data.project_id,
     },
-    UpdateExpression: "SET projectids = list_append(:projectids, :projectids)",
+    UpdateExpression: "SET projectstatus = :status",
     ExpressionAttributeValues: {
-      ":projectids": data.projectids || null,
+      ":status": data.projectstatus,
     },
     ReturnValues:"ALL_NEW"
-  };
+  };    
 
   try {
     const result = await dynamoDbLib.call("update", params);

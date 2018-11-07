@@ -1,0 +1,12 @@
+{
+    "body": {
+        "project_id": "1",
+        "developers": [
+            "test", "655c92c0-e2af-11e8-90dd-3b087883f4c3"
+        ],
+        "projectmanager":"test",
+        "projectname": "TEST PROJECT createProject API",
+        "projectstatus":"1",
+        "projectdescription":"THIS IS A TEST PROJECT for createProject API"
+    }
+}

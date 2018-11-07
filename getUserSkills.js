@@ -4,12 +4,11 @@ import { success, failure } from "./libs/response-lib";
 export async function main(event, context) {
     const data = (event.body)
     const params = {
-    TableName: "USER_DATA",    
+    TableName: "user_data",    
     Key: {
-      userId: data.userId,
-      email: data.email
+      userId: data.userId
     },
-    ProjectionExpression: "projectids",
+    ProjectionExpression: "skills",
   };
 
   try {

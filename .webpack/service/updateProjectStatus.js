@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./updateUserProjects.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./updateProjectStatus.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -113,8 +113,7 @@ _awsSdk2.default.config.update({ region: "eu-west-2" });
 
 function call(action, params) {
     var dynamoDb = new _awsSdk2.default.DynamoDB.DocumentClient();
-    console.log(dynamoDb);
-
+    //console.log(dynamoDb);
     return dynamoDb[action](params).promise();
 }
 
@@ -166,10 +165,10 @@ function failure(body) {
 
 /***/ }),
 
-/***/ "./updateUserProjects.js":
-/*!*******************************!*\
-  !*** ./updateUserProjects.js ***!
-  \*******************************/
+/***/ "./updateProjectStatus.js":
+/*!********************************!*\
+  !*** ./updateProjectStatus.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -198,14 +197,13 @@ var main = exports.main = function () {
           case 0:
             data = event.body;
             params = {
-              TableName: "USER_DATA",
+              TableName: "project_data",
               Key: {
-                userId: data.userId,
-                email: data.email
+                project_id: data.project_id
               },
-              UpdateExpression: "SET projectids = list_append(:projectids, :projectids)",
+              UpdateExpression: "SET projectstatus = :status",
               ExpressionAttributeValues: {
-                ":projectids": data.projectids || null
+                ":status": data.projectstatus
               },
               ReturnValues: "ALL_NEW"
             };
@@ -307,4 +305,4 @@ module.exports = require("source-map-support/register");
 /***/ })
 
 /******/ })));
-//# sourceMappingURL=updateUserProjects.js.map
+//# sourceMappingURL=updateProjectStatus.js.map

@@ -1,9 +1,9 @@
 {
   "body": {
-    "projectids": [
-      "project1", "project2"
+    "skills": [
+      "Software Development", "Haskell"
     ],
-    "email":"thissucks@mailinator.com",
+    "email":"johnlegend2018s@mailinator.com",
     "name":"John Legend"
   }
 }

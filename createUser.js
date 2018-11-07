@@ -5,12 +5,12 @@ import { success, failure } from "./libs/response-lib";
 export async function main(event, context) {
   const data = (event.body);
   const params = {
-    TableName: "USER_DATA",
+    TableName: "user_data",
     Item: {
       userId: uuid.v1(),
       email: data.email,
       name: data.name,
-      projectids: data.projectids,
+      skills: data.skills,
     }
   };
 
