@@ -91,7 +91,7 @@ functions:
     handler: getProjectsUser.main
     events:
       - http:
-          path: getProjectsUser
+          path: getProjectsUser/{id}
           method: get
           cors: true
           authorizer: aws_iam
@@ -103,5 +103,13 @@ functions:
           method: put
           cors: true
           authorizer: aws_iam
-
+        createProject:
+  createProject2:        
+    handler: createProject2.main
+    events:
+      - http:
+          path: createProject2
+          method: post
+          cors: true
+          authorizer: aws_iam
   
