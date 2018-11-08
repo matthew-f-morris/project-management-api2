@@ -81,94 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./updateProjectStatus.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./getProjectsUser.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./libs/dynamodb-lib.js":
-/*!******************************!*\
-  !*** ./libs/dynamodb-lib.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.call = call;
-
-__webpack_require__(/*! source-map-support/register */ "source-map-support/register");
-
-var _awsSdk = __webpack_require__(/*! aws-sdk */ "aws-sdk");
-
-var _awsSdk2 = _interopRequireDefault(_awsSdk);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_awsSdk2.default.config.update({ region: "eu-west-2" });
-
-function call(action, params) {
-    var dynamoDb = new _awsSdk2.default.DynamoDB.DocumentClient();
-    //console.log(dynamoDb);
-    return dynamoDb[action](params).promise();
-}
-
-/***/ }),
-
-/***/ "./libs/response-lib.js":
-/*!******************************!*\
-  !*** ./libs/response-lib.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ "babel-runtime/core-js/json/stringify");
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
-exports.success = success;
-exports.failure = failure;
-
-__webpack_require__(/*! source-map-support/register */ "source-map-support/register");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function buildResponse(statusCode, body) {
-    return {
-        statusCode: statusCode,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": true
-        },
-        body: (0, _stringify2.default)(body)
-    };
-}
-
-function success(body) {
-    return buildResponse(200, body);
-}
-
-function failure(body) {
-    return buildResponse(500, body);
-}
-
-/***/ }),
-
-/***/ "./updateProjectStatus.js":
-/*!********************************!*\
-  !*** ./updateProjectStatus.js ***!
-  \********************************/
+/***/ "./getProjectsUser.js":
+/*!****************************!*\
+  !*** ./getProjectsUser.js ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -198,22 +119,19 @@ var main = exports.main = function () {
             data = event.body;
             params = {
               TableName: "project_data",
-              Key: {
-                project_id: data.project_id
-              },
-              UpdateExpression: "SET projectstatus = :status",
+              //ProjectionExpression: "developers",
+              FilterExpression: "contains(developers, :id)",
               ExpressionAttributeValues: {
-                ":status": data.projectstatus
-              },
-              ReturnValues: "ALL_NEW"
+                ":id": data.userId
+              }
             };
             _context.prev = 2;
             _context.next = 5;
-            return dynamoDbLib.call("update", params);
+            return dynamoDbLib.call("scan", params);
 
           case 5:
             result = _context.sent;
-            return _context.abrupt("return", (0, _responseLib.success)({ status: true }));
+            return _context.abrupt("return", (0, _responseLib.success)(result.Items));
 
           case 9:
             _context.prev = 9;
@@ -243,9 +161,84 @@ var dynamoDbLib = _interopRequireWildcard(_dynamodbLib);
 
 var _responseLib = __webpack_require__(/*! ./libs/response-lib */ "./libs/response-lib.js");
 
+var _util = __webpack_require__(/*! util */ "util");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ "./libs/dynamodb-lib.js":
+/*!******************************!*\
+  !*** ./libs/dynamodb-lib.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.call = call;
+
+__webpack_require__(/*! source-map-support/register */ "source-map-support/register");
+
+var _awsSdk = __webpack_require__(/*! aws-sdk */ "aws-sdk");
+
+var _awsSdk2 = _interopRequireDefault(_awsSdk);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_awsSdk2.default.config.update({ region: "eu-west-2" });
+
+function call(action, params) {
+    var dynamoDb = new _awsSdk2.default.DynamoDB.DocumentClient();
+    console.log(dynamoDb);
+    return dynamoDb[action](params).promise();
+}
+
+/***/ }),
+
+/***/ "./libs/response-lib.js":
+/*!******************************!*\
+  !*** ./libs/response-lib.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.success = success;
+exports.failure = failure;
+
+__webpack_require__(/*! source-map-support/register */ "source-map-support/register");
+
+function buildResponse(statusCode, body) {
+    return {
+        statusCode: statusCode,
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": true
+        },
+        //body: JSON.stringify(body)
+        body: body
+    };
+}
+
+function success(body) {
+    return buildResponse(200, body);
+}
+
+function failure(body) {
+    return buildResponse(500, body);
+}
 
 /***/ }),
 
@@ -257,17 +250,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /***/ (function(module, exports) {
 
 module.exports = require("aws-sdk");
-
-/***/ }),
-
-/***/ "babel-runtime/core-js/json/stringify":
-/*!*******************************************************!*\
-  !*** external "babel-runtime/core-js/json/stringify" ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/core-js/json/stringify");
 
 /***/ }),
 
@@ -302,7 +284,18 @@ module.exports = require("babel-runtime/regenerator");
 
 module.exports = require("source-map-support/register");
 
+/***/ }),
+
+/***/ "util":
+/*!***********************!*\
+  !*** external "util" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("util");
+
 /***/ })
 
 /******/ })));
-//# sourceMappingURL=updateProjectStatus.js.map
+//# sourceMappingURL=getProjectsUser.js.map

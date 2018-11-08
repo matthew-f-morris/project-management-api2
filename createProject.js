@@ -9,7 +9,7 @@ export async function main(event, context) {
     Item: {
       project_id: uuid.v1(),
       developers: data.developers,
-      projetdescription: data.projectdescription,
+      projectdescription: data.projectdescription,
       projectmanager: data.projectmanager,
       projectname: data.projectname,
       projectstatus: data.projectstatus
