@@ -56,13 +56,13 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
-  # getUserProjects:
-  #   handler: getUserProjects.main
-  #   events:
-  #     - http:
-  #         path: getUserProjects
-  #         method: get
-  #         authorizer: aws_iam
+  getUserName:
+    handler: getUserName.main
+    events:
+      - http:
+          path: getUserName/{id}
+          method: get
+          authorizer: aws_iam
   updateUserProjects:
     handler: updateUserProjects.main
     events:
