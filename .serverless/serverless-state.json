@@ -211,7 +211,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541708577667-2018-11-08T20:22:57.667Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541766627048-2018-11-09T12:30:27.048Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-createUser",
               "Handler": "createUser.main",
@@ -230,14 +230,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateUserLambdaVersionHkyQfo0o0SnCkEMFwrvPdsi7iBR3iWjUfeeJ9wc5IA": {
+          "CreateUserLambdaVersionz3I7vH2QDdMbaIjLGICc0ZkwsDEAE4eCRX2Oc5cWq0": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateUserLambdaFunction"
               },
-              "CodeSha256": "6yTn6SJL0AyjBDpNCR3DDu/2ZzwB7u+wiwOTwkRAttc="
+              "CodeSha256": "nrMN30+C/XDfxCmXVMgmFngQNuer2NbFZS6+2eNSyNI="
             }
           },
           "GetUserSkillsLambdaFunction": {
@@ -247,7 +247,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541708577667-2018-11-08T20:22:57.667Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541766627048-2018-11-09T12:30:27.048Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-getUserSkills",
               "Handler": "getUserSkills.main",
@@ -266,14 +266,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetUserSkillsLambdaVersionFiH5NziZbMoiCfQ7oZIY2eyNX81mqW9PxB0fnXUheM": {
+          "GetUserSkillsLambdaVersioniREBPG4ttLLvwXmjjrjcjXd1sovKKuyYAFP3ExD0": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetUserSkillsLambdaFunction"
               },
-              "CodeSha256": "6yTn6SJL0AyjBDpNCR3DDu/2ZzwB7u+wiwOTwkRAttc="
+              "CodeSha256": "nrMN30+C/XDfxCmXVMgmFngQNuer2NbFZS6+2eNSyNI="
             }
           },
           "UpdateUserProjectsLambdaFunction": {
@@ -283,7 +283,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541708577667-2018-11-08T20:22:57.667Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541766627048-2018-11-09T12:30:27.048Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-updateUserProjects",
               "Handler": "updateUserProjects.main",
@@ -302,14 +302,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UpdateUserProjectsLambdaVersionQ0ZFtroNSWoHYUmP7YYqJEYgVm0XVsMXOTte4LVbBQ": {
+          "UpdateUserProjectsLambdaVersion8l15RrfVjpmjOKc9qpSABiXNT0CTmlUPk57qBM5UY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateUserProjectsLambdaFunction"
               },
-              "CodeSha256": "6yTn6SJL0AyjBDpNCR3DDu/2ZzwB7u+wiwOTwkRAttc="
+              "CodeSha256": "nrMN30+C/XDfxCmXVMgmFngQNuer2NbFZS6+2eNSyNI="
             }
           },
           "CreateProjectLambdaFunction": {
@@ -319,7 +319,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541708577667-2018-11-08T20:22:57.667Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541766627048-2018-11-09T12:30:27.048Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-createProject",
               "Handler": "createProject.main",
@@ -338,14 +338,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateProjectLambdaVersionoWh6MRAzbRE0ofRb5JBaTaNuDdKr0pjy1k77JuA": {
+          "CreateProjectLambdaVersion5gT66YygbQxw5yaVKjdVe9vX69WryS3QYIyjedDRj8c": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateProjectLambdaFunction"
               },
-              "CodeSha256": "6yTn6SJL0AyjBDpNCR3DDu/2ZzwB7u+wiwOTwkRAttc="
+              "CodeSha256": "nrMN30+C/XDfxCmXVMgmFngQNuer2NbFZS6+2eNSyNI="
             }
           },
           "GetProjectLambdaFunction": {
@@ -355,7 +355,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541708577667-2018-11-08T20:22:57.667Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541766627048-2018-11-09T12:30:27.048Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-getProject",
               "Handler": "getProject.main",
@@ -374,14 +374,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetProjectLambdaVersioneGR1dE5fUi3NETn5vNXjgZzT9dvGJKxz9Wu1jdfRU": {
+          "GetProjectLambdaVersionzdrY1r3ZdYgCQ2cPgm1RB3QuZRXOhVEU23gqNallZpk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetProjectLambdaFunction"
               },
-              "CodeSha256": "6yTn6SJL0AyjBDpNCR3DDu/2ZzwB7u+wiwOTwkRAttc="
+              "CodeSha256": "nrMN30+C/XDfxCmXVMgmFngQNuer2NbFZS6+2eNSyNI="
             }
           },
           "GetProjectsUserLambdaFunction": {
@@ -391,7 +391,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541708577667-2018-11-08T20:22:57.667Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541766627048-2018-11-09T12:30:27.048Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-getProjectsUser",
               "Handler": "getProjectsUser.main",
@@ -410,14 +410,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetProjectsUserLambdaVersionxZVDL4cD9AZhSSEdvtBeutL1n7I1qigKoHmHVG9nrNs": {
+          "GetProjectsUserLambdaVersionQEdB6akyYaaVR1lcQI2VeaXQlhTai18RJH8E8mgHgU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetProjectsUserLambdaFunction"
               },
-              "CodeSha256": "6yTn6SJL0AyjBDpNCR3DDu/2ZzwB7u+wiwOTwkRAttc="
+              "CodeSha256": "nrMN30+C/XDfxCmXVMgmFngQNuer2NbFZS6+2eNSyNI="
             }
           },
           "UpdateProjectStatusLambdaFunction": {
@@ -427,7 +427,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541708577667-2018-11-08T20:22:57.667Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541766627048-2018-11-09T12:30:27.048Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-updateProjectStatus",
               "Handler": "updateProjectStatus.main",
@@ -446,14 +446,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UpdateProjectStatusLambdaVersion0cuHbCFiVUnFKrVsgcipSvNBAxE8YtdrmiBP4ZqSNg": {
+          "UpdateProjectStatusLambdaVersionzubKcX5KJ5PFkRA1gt3PM47Z90wsQfgpl57451jnzY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateProjectStatusLambdaFunction"
               },
-              "CodeSha256": "6yTn6SJL0AyjBDpNCR3DDu/2ZzwB7u+wiwOTwkRAttc="
+              "CodeSha256": "nrMN30+C/XDfxCmXVMgmFngQNuer2NbFZS6+2eNSyNI="
             }
           },
           "CreateProject2LambdaFunction": {
@@ -463,7 +463,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541708577667-2018-11-08T20:22:57.667Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541766627048-2018-11-09T12:30:27.048Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-createProject2",
               "Handler": "createProject2.main",
@@ -482,14 +482,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateProject2LambdaVersionqOuZ0LwkOWkCBTy0TF1IpIC6IC0c5LVZUSipfrA0": {
+          "CreateProject2LambdaVersionhJ0sY0caOD1QUymBhbFnZmGRyLkhUaQaHJfxWyGiM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateProject2LambdaFunction"
               },
-              "CodeSha256": "6yTn6SJL0AyjBDpNCR3DDu/2ZzwB7u+wiwOTwkRAttc="
+              "CodeSha256": "nrMN30+C/XDfxCmXVMgmFngQNuer2NbFZS6+2eNSyNI="
             }
           },
           "ApiGatewayRestApi": {
@@ -1355,7 +1355,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1541708577809": {
+          "ApiGatewayDeployment1541766627195": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1768,49 +1768,49 @@
           "CreateUserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateUserLambdaVersionHkyQfo0o0SnCkEMFwrvPdsi7iBR3iWjUfeeJ9wc5IA"
+              "Ref": "CreateUserLambdaVersionz3I7vH2QDdMbaIjLGICc0ZkwsDEAE4eCRX2Oc5cWq0"
             }
           },
           "GetUserSkillsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetUserSkillsLambdaVersionFiH5NziZbMoiCfQ7oZIY2eyNX81mqW9PxB0fnXUheM"
+              "Ref": "GetUserSkillsLambdaVersioniREBPG4ttLLvwXmjjrjcjXd1sovKKuyYAFP3ExD0"
             }
           },
           "UpdateUserProjectsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateUserProjectsLambdaVersionQ0ZFtroNSWoHYUmP7YYqJEYgVm0XVsMXOTte4LVbBQ"
+              "Ref": "UpdateUserProjectsLambdaVersion8l15RrfVjpmjOKc9qpSABiXNT0CTmlUPk57qBM5UY"
             }
           },
           "CreateProjectLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateProjectLambdaVersionoWh6MRAzbRE0ofRb5JBaTaNuDdKr0pjy1k77JuA"
+              "Ref": "CreateProjectLambdaVersion5gT66YygbQxw5yaVKjdVe9vX69WryS3QYIyjedDRj8c"
             }
           },
           "GetProjectLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetProjectLambdaVersioneGR1dE5fUi3NETn5vNXjgZzT9dvGJKxz9Wu1jdfRU"
+              "Ref": "GetProjectLambdaVersionzdrY1r3ZdYgCQ2cPgm1RB3QuZRXOhVEU23gqNallZpk"
             }
           },
           "GetProjectsUserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetProjectsUserLambdaVersionxZVDL4cD9AZhSSEdvtBeutL1n7I1qigKoHmHVG9nrNs"
+              "Ref": "GetProjectsUserLambdaVersionQEdB6akyYaaVR1lcQI2VeaXQlhTai18RJH8E8mgHgU"
             }
           },
           "UpdateProjectStatusLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateProjectStatusLambdaVersion0cuHbCFiVUnFKrVsgcipSvNBAxE8YtdrmiBP4ZqSNg"
+              "Ref": "UpdateProjectStatusLambdaVersionzubKcX5KJ5PFkRA1gt3PM47Z90wsQfgpl57451jnzY"
             }
           },
           "CreateProject2LambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateProject2LambdaVersionqOuZ0LwkOWkCBTy0TF1IpIC6IC0c5LVZUSipfrA0"
+              "Ref": "CreateProject2LambdaVersionhJ0sY0caOD1QUymBhbFnZmGRyLkhUaQaHJfxWyGiM"
             }
           },
           "ServiceEndpoint": {
@@ -2212,7 +2212,7 @@
     }
   },
   "package": {
-    "artifactDirectoryName": "serverless/project-management-api2/prod/1541708577667-2018-11-08T20:22:57.667Z",
+    "artifactDirectoryName": "serverless/project-management-api2/prod/1541766627048-2018-11-09T12:30:27.048Z",
     "artifact": ""
   }
 }

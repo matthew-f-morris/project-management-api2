@@ -3,11 +3,11 @@ import * as dynamoDbLib from "./libs/dynamodb-lib";
 import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context) {
-  const data = (event.body);
+  const data = JSON.parse(event.body)
   const params = {
     TableName: "user_data",
     Item: {
-      userId: event.requestContext.identity.cognitoIdentityId,
+      userId: data.userId,
       email: data.email,
       name: data.name,
       skills: data.skills,
@@ -19,7 +19,7 @@ export async function main(event, context) {
     return success(params.Item);
   } catch (e) {
     console.log(e);
-    return failure({ status: false });
+    return failure({ status: false, error: e, data });
   }
 }
 

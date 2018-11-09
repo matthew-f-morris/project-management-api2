@@ -1,9 +1,10 @@
 {
   "body": {
+    "userId":"testAPI",
+    "email":"johnlegend2018s@mailinator.com",
+    "name":"John Legend",
     "skills": [
       "Software Development", "Haskell"
-    ],
-    "email":"johnlegend2018s@mailinator.com",
-    "name":"John Legend"
+    ]   
   }
 }
