@@ -56,6 +56,14 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+  getAllUsers:
+    handler: getAllUsers.main
+    events:
+      - http:
+          path: getAllUsers
+          method: get
+          cors: true
+          authorizer: aws_iam
   getUserName:
     handler: getUserName.main
     events:
@@ -83,7 +91,7 @@ functions:
     handler: getProject.main
     events:
       - http:
-          path: getProject
+          path: getProject/{id}
           method: get
           cors: true
           authorizer: aws_iam

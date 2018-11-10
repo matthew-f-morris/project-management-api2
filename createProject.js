@@ -3,7 +3,7 @@ import * as dynamoDbLib from "./libs/dynamodb-lib";
 import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context) {
-  const data = (event.body);
+  const data = JSON.parse(event.body);
   const params = {
     TableName: "project_data",
     Item: {
@@ -21,7 +21,7 @@ export async function main(event, context) {
     return success(params.Item);
   } catch (e) {
     console.log(e);
-    return failure({ status: false });
+    return failure({ status: false, error: e, data });
   }
 }
 

@@ -17,6 +17,12 @@
         "LogGroupName": "/aws/lambda/project-management-api2-prod-getUserSkills"
       }
     },
+    "GetAllUsersLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/project-management-api2-prod-getAllUsers"
+      }
+    },
     "GetUserNameLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
@@ -106,6 +112,9 @@
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-getUserSkills:*"
                     },
                     {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-getAllUsers:*"
+                    },
+                    {
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-getUserName:*"
                     },
                     {
@@ -139,6 +148,9 @@
                     },
                     {
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-getUserSkills:*:*"
+                    },
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-getAllUsers:*:*"
                     },
                     {
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-getUserName:*:*"
@@ -204,7 +216,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/project-management-api2/prod/1541785432838-2018-11-09T17:43:52.838Z/project-management-api2.zip"
+          "S3Key": "serverless/project-management-api2/prod/1541872426989-2018-11-10T17:53:46.989Z/project-management-api2.zip"
         },
         "FunctionName": "project-management-api2-prod-createUser",
         "Handler": "createUser.main",
@@ -223,14 +235,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "CreateUserLambdaVersion58XsU7hnQ3Om90XVYoItxNoyJLBpsvLLkOm3YtS6A": {
+    "CreateUserLambdaVersionKhO6o9G0cTHKTcljdy8XKoqbkSYonc3PLyIlL0WsFI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateUserLambdaFunction"
         },
-        "CodeSha256": "fHHTEVAu6uUyC+PhVLIN09A4jxtfgviqxMFGCR5NuuI="
+        "CodeSha256": "I/YelfuwIruulX0J/m3Nwiiwbe9/3IcG3nIzzNGkKcw="
       }
     },
     "GetUserSkillsLambdaFunction": {
@@ -240,7 +252,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/project-management-api2/prod/1541785432838-2018-11-09T17:43:52.838Z/project-management-api2.zip"
+          "S3Key": "serverless/project-management-api2/prod/1541872426989-2018-11-10T17:53:46.989Z/project-management-api2.zip"
         },
         "FunctionName": "project-management-api2-prod-getUserSkills",
         "Handler": "getUserSkills.main",
@@ -259,14 +271,50 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetUserSkillsLambdaVersion5Td1kwYHLEpZ3msQxbfvFugLI2G7FgbCpNuYN1KF8XE": {
+    "GetUserSkillsLambdaVersionodpSBIoUl6K3LZtHgTVa9gN4CEvtBgfZVz7Xr8U": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetUserSkillsLambdaFunction"
         },
-        "CodeSha256": "fHHTEVAu6uUyC+PhVLIN09A4jxtfgviqxMFGCR5NuuI="
+        "CodeSha256": "I/YelfuwIruulX0J/m3Nwiiwbe9/3IcG3nIzzNGkKcw="
+      }
+    },
+    "GetAllUsersLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/project-management-api2/prod/1541872426989-2018-11-10T17:53:46.989Z/project-management-api2.zip"
+        },
+        "FunctionName": "project-management-api2-prod-getAllUsers",
+        "Handler": "getAllUsers.main",
+        "MemorySize": 1024,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs8.10",
+        "Timeout": 6
+      },
+      "DependsOn": [
+        "GetAllUsersLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "GetAllUsersLambdaVersionr7MolxrQjPSgr5VYRtpBMx2YhjnLQIT9RVXcMvDR2Y": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetAllUsersLambdaFunction"
+        },
+        "CodeSha256": "I/YelfuwIruulX0J/m3Nwiiwbe9/3IcG3nIzzNGkKcw="
       }
     },
     "GetUserNameLambdaFunction": {
@@ -276,7 +324,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/project-management-api2/prod/1541785432838-2018-11-09T17:43:52.838Z/project-management-api2.zip"
+          "S3Key": "serverless/project-management-api2/prod/1541872426989-2018-11-10T17:53:46.989Z/project-management-api2.zip"
         },
         "FunctionName": "project-management-api2-prod-getUserName",
         "Handler": "getUserName.main",
@@ -295,14 +343,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetUserNameLambdaVersionYZ7lj5T18hXGBBFe2fwqTjQlYF0sf663j6TEfHn8": {
+    "GetUserNameLambdaVersionaUvWAjY6qDrtYPOyiOu3c5ZRdQcPAVlltcQdt1WfI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetUserNameLambdaFunction"
         },
-        "CodeSha256": "fHHTEVAu6uUyC+PhVLIN09A4jxtfgviqxMFGCR5NuuI="
+        "CodeSha256": "I/YelfuwIruulX0J/m3Nwiiwbe9/3IcG3nIzzNGkKcw="
       }
     },
     "UpdateUserProjectsLambdaFunction": {
@@ -312,7 +360,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/project-management-api2/prod/1541785432838-2018-11-09T17:43:52.838Z/project-management-api2.zip"
+          "S3Key": "serverless/project-management-api2/prod/1541872426989-2018-11-10T17:53:46.989Z/project-management-api2.zip"
         },
         "FunctionName": "project-management-api2-prod-updateUserProjects",
         "Handler": "updateUserProjects.main",
@@ -331,14 +379,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "UpdateUserProjectsLambdaVersionwXdjkyHuLSg7QjQn1rHdmMo29SUguIFq5U4522rwNY": {
+    "UpdateUserProjectsLambdaVersionSqxN6exVH8Qz0RcSLt6E1NUYA0x55B60Se0KV0MfUo": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateUserProjectsLambdaFunction"
         },
-        "CodeSha256": "fHHTEVAu6uUyC+PhVLIN09A4jxtfgviqxMFGCR5NuuI="
+        "CodeSha256": "I/YelfuwIruulX0J/m3Nwiiwbe9/3IcG3nIzzNGkKcw="
       }
     },
     "CreateProjectLambdaFunction": {
@@ -348,7 +396,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/project-management-api2/prod/1541785432838-2018-11-09T17:43:52.838Z/project-management-api2.zip"
+          "S3Key": "serverless/project-management-api2/prod/1541872426989-2018-11-10T17:53:46.989Z/project-management-api2.zip"
         },
         "FunctionName": "project-management-api2-prod-createProject",
         "Handler": "createProject.main",
@@ -367,14 +415,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "CreateProjectLambdaVersionMCQFny8Mh0bYw1WusqCpfq7j3hnyEdFbLjI2LxTrc": {
+    "CreateProjectLambdaVersioneBSBcr5zGE0e3XUAQwwjZAc42nWAFqiN7rP0l2mqfY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateProjectLambdaFunction"
         },
-        "CodeSha256": "fHHTEVAu6uUyC+PhVLIN09A4jxtfgviqxMFGCR5NuuI="
+        "CodeSha256": "I/YelfuwIruulX0J/m3Nwiiwbe9/3IcG3nIzzNGkKcw="
       }
     },
     "GetProjectLambdaFunction": {
@@ -384,7 +432,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/project-management-api2/prod/1541785432838-2018-11-09T17:43:52.838Z/project-management-api2.zip"
+          "S3Key": "serverless/project-management-api2/prod/1541872426989-2018-11-10T17:53:46.989Z/project-management-api2.zip"
         },
         "FunctionName": "project-management-api2-prod-getProject",
         "Handler": "getProject.main",
@@ -403,14 +451,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetProjectLambdaVersionkyioxfVdfVSbEEYGsVt3k5Ps1snQJ1T6cPfY1O5geeU": {
+    "GetProjectLambdaVersionDhSgdUM15wSWgk7ytuemadC3IvIqD4vssnkRTsZecVw": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetProjectLambdaFunction"
         },
-        "CodeSha256": "fHHTEVAu6uUyC+PhVLIN09A4jxtfgviqxMFGCR5NuuI="
+        "CodeSha256": "I/YelfuwIruulX0J/m3Nwiiwbe9/3IcG3nIzzNGkKcw="
       }
     },
     "GetProjectsUserLambdaFunction": {
@@ -420,7 +468,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/project-management-api2/prod/1541785432838-2018-11-09T17:43:52.838Z/project-management-api2.zip"
+          "S3Key": "serverless/project-management-api2/prod/1541872426989-2018-11-10T17:53:46.989Z/project-management-api2.zip"
         },
         "FunctionName": "project-management-api2-prod-getProjectsUser",
         "Handler": "getProjectsUser.main",
@@ -439,14 +487,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetProjectsUserLambdaVersionHZ5gSs9aLdN2wvPUGtviVKqJ55mlGb6JMFFO2R4k": {
+    "GetProjectsUserLambdaVersionWsai5ncSiGqcw5Qgxarn34StpdSZDbjl9jS5DeYB1s": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetProjectsUserLambdaFunction"
         },
-        "CodeSha256": "fHHTEVAu6uUyC+PhVLIN09A4jxtfgviqxMFGCR5NuuI="
+        "CodeSha256": "I/YelfuwIruulX0J/m3Nwiiwbe9/3IcG3nIzzNGkKcw="
       }
     },
     "UpdateProjectStatusLambdaFunction": {
@@ -456,7 +504,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/project-management-api2/prod/1541785432838-2018-11-09T17:43:52.838Z/project-management-api2.zip"
+          "S3Key": "serverless/project-management-api2/prod/1541872426989-2018-11-10T17:53:46.989Z/project-management-api2.zip"
         },
         "FunctionName": "project-management-api2-prod-updateProjectStatus",
         "Handler": "updateProjectStatus.main",
@@ -475,14 +523,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "UpdateProjectStatusLambdaVersionlLF5pIVHxjvA1B4akXxhDKpHUwf412D2kAuqArI": {
+    "UpdateProjectStatusLambdaVersionYzvyilvmt1R1nijzAjcuIk9jeVGYHGJmql3i1u7OA": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateProjectStatusLambdaFunction"
         },
-        "CodeSha256": "fHHTEVAu6uUyC+PhVLIN09A4jxtfgviqxMFGCR5NuuI="
+        "CodeSha256": "I/YelfuwIruulX0J/m3Nwiiwbe9/3IcG3nIzzNGkKcw="
       }
     },
     "CreateProject2LambdaFunction": {
@@ -492,7 +540,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/project-management-api2/prod/1541785432838-2018-11-09T17:43:52.838Z/project-management-api2.zip"
+          "S3Key": "serverless/project-management-api2/prod/1541872426989-2018-11-10T17:53:46.989Z/project-management-api2.zip"
         },
         "FunctionName": "project-management-api2-prod-createProject2",
         "Handler": "createProject2.main",
@@ -511,14 +559,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "CreateProject2LambdaVersiontuc1Wz1GaFRfCE2jKSwCgGJBoHNT8LXMrE1HAQg": {
+    "CreateProject2LambdaVersionikhCdjIZitX9F5VeOIOp4KTCPPztKU0MYnaeGd1uc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateProject2LambdaFunction"
         },
-        "CodeSha256": "fHHTEVAu6uUyC+PhVLIN09A4jxtfgviqxMFGCR5NuuI="
+        "CodeSha256": "I/YelfuwIruulX0J/m3Nwiiwbe9/3IcG3nIzzNGkKcw="
       }
     },
     "ApiGatewayRestApi": {
@@ -557,6 +605,21 @@
           ]
         },
         "PathPart": "getUserSkills",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceGetallusers": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "getAllUsers",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -629,6 +692,18 @@
           ]
         },
         "PathPart": "getProject",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceGetprojectIdVar": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceGetproject"
+        },
+        "PathPart": "{id}",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -785,6 +860,53 @@
         }
       }
     },
+    "ApiGatewayMethodGetallusersOptions": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Methods": true,
+              "method.response.header.Access-Control-Allow-Credentials": true
+            },
+            "ResponseModels": {}
+          }
+        ],
+        "RequestParameters": {},
+        "Integration": {
+          "Type": "MOCK",
+          "RequestTemplates": {
+            "application/json": "{statusCode:200}"
+          },
+          "ContentHandling": "CONVERT_TO_TEXT",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+                "method.response.header.Access-Control-Allow-Credentials": "'false'"
+              },
+              "ResponseTemplates": {
+                "application/json": ""
+              }
+            }
+          ]
+        },
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceGetallusers"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
     "ApiGatewayMethodUpdateuserprojectsOptions": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
@@ -879,7 +1001,7 @@
         }
       }
     },
-    "ApiGatewayMethodGetprojectOptions": {
+    "ApiGatewayMethodGetprojectIdVarOptions": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "AuthorizationType": "NONE",
@@ -919,7 +1041,7 @@
           ]
         },
         "ResourceId": {
-          "Ref": "ApiGatewayResourceGetproject"
+          "Ref": "ApiGatewayResourceGetprojectIdVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -1153,6 +1275,49 @@
         "MethodResponses": []
       }
     },
+    "ApiGatewayMethodGetallusersGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceGetallusers"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "AWS_IAM",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "GetAllUsersLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
     "ApiGatewayMethodGetusernameIdVarGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
@@ -1282,13 +1447,13 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayMethodGetprojectGet": {
+    "ApiGatewayMethodGetprojectIdVarGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "GET",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceGetproject"
+          "Ref": "ApiGatewayResourceGetprojectIdVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -1454,7 +1619,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1541785432982": {
+    "ApiGatewayDeployment1541872427164": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1465,18 +1630,20 @@
       "DependsOn": [
         "ApiGatewayMethodCreateuserOptions",
         "ApiGatewayMethodGetuserskillsOptions",
+        "ApiGatewayMethodGetallusersOptions",
         "ApiGatewayMethodUpdateuserprojectsOptions",
         "ApiGatewayMethodCreateprojectOptions",
-        "ApiGatewayMethodGetprojectOptions",
+        "ApiGatewayMethodGetprojectIdVarOptions",
         "ApiGatewayMethodGetprojectsuserIdVarOptions",
         "ApiGatewayMethodUpdateprojectstatusOptions",
         "ApiGatewayMethodCreateproject2Options",
         "ApiGatewayMethodCreateuserPost",
         "ApiGatewayMethodGetuserskillsGet",
+        "ApiGatewayMethodGetallusersGet",
         "ApiGatewayMethodGetusernameIdVarGet",
         "ApiGatewayMethodUpdateuserprojectsPut",
         "ApiGatewayMethodCreateprojectPost",
-        "ApiGatewayMethodGetprojectGet",
+        "ApiGatewayMethodGetprojectIdVarGet",
         "ApiGatewayMethodGetprojectsuserIdVarGet",
         "ApiGatewayMethodUpdateprojectstatusPut",
         "ApiGatewayMethodCreateproject2Post"
@@ -1535,6 +1702,53 @@
         "FunctionName": {
           "Fn::GetAtt": [
             "GetUserSkillsLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": {
+          "Fn::Join": [
+            "",
+            [
+              "apigateway.",
+              {
+                "Ref": "AWS::URLSuffix"
+              }
+            ]
+          ]
+        },
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "GetAllUsersLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetAllUsersLambdaFunction",
             "Arn"
           ]
         },
@@ -1915,55 +2129,61 @@
     "CreateUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateUserLambdaVersion58XsU7hnQ3Om90XVYoItxNoyJLBpsvLLkOm3YtS6A"
+        "Ref": "CreateUserLambdaVersionKhO6o9G0cTHKTcljdy8XKoqbkSYonc3PLyIlL0WsFI"
       }
     },
     "GetUserSkillsLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetUserSkillsLambdaVersion5Td1kwYHLEpZ3msQxbfvFugLI2G7FgbCpNuYN1KF8XE"
+        "Ref": "GetUserSkillsLambdaVersionodpSBIoUl6K3LZtHgTVa9gN4CEvtBgfZVz7Xr8U"
+      }
+    },
+    "GetAllUsersLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetAllUsersLambdaVersionr7MolxrQjPSgr5VYRtpBMx2YhjnLQIT9RVXcMvDR2Y"
       }
     },
     "GetUserNameLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetUserNameLambdaVersionYZ7lj5T18hXGBBFe2fwqTjQlYF0sf663j6TEfHn8"
+        "Ref": "GetUserNameLambdaVersionaUvWAjY6qDrtYPOyiOu3c5ZRdQcPAVlltcQdt1WfI"
       }
     },
     "UpdateUserProjectsLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateUserProjectsLambdaVersionwXdjkyHuLSg7QjQn1rHdmMo29SUguIFq5U4522rwNY"
+        "Ref": "UpdateUserProjectsLambdaVersionSqxN6exVH8Qz0RcSLt6E1NUYA0x55B60Se0KV0MfUo"
       }
     },
     "CreateProjectLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateProjectLambdaVersionMCQFny8Mh0bYw1WusqCpfq7j3hnyEdFbLjI2LxTrc"
+        "Ref": "CreateProjectLambdaVersioneBSBcr5zGE0e3XUAQwwjZAc42nWAFqiN7rP0l2mqfY"
       }
     },
     "GetProjectLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetProjectLambdaVersionkyioxfVdfVSbEEYGsVt3k5Ps1snQJ1T6cPfY1O5geeU"
+        "Ref": "GetProjectLambdaVersionDhSgdUM15wSWgk7ytuemadC3IvIqD4vssnkRTsZecVw"
       }
     },
     "GetProjectsUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetProjectsUserLambdaVersionHZ5gSs9aLdN2wvPUGtviVKqJ55mlGb6JMFFO2R4k"
+        "Ref": "GetProjectsUserLambdaVersionWsai5ncSiGqcw5Qgxarn34StpdSZDbjl9jS5DeYB1s"
       }
     },
     "UpdateProjectStatusLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateProjectStatusLambdaVersionlLF5pIVHxjvA1B4akXxhDKpHUwf412D2kAuqArI"
+        "Ref": "UpdateProjectStatusLambdaVersionYzvyilvmt1R1nijzAjcuIk9jeVGYHGJmql3i1u7OA"
       }
     },
     "CreateProject2LambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateProject2LambdaVersiontuc1Wz1GaFRfCE2jKSwCgGJBoHNT8LXMrE1HAQg"
+        "Ref": "CreateProject2LambdaVersionikhCdjIZitX9F5VeOIOp4KTCPPztKU0MYnaeGd1uc"
       }
     },
     "ServiceEndpoint": {

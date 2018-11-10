@@ -2,11 +2,12 @@ import * as dynamoDbLib from "./libs/dynamodb-lib";
 import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context) {
-    const data = (event.body)
+
+    const data = event.pathParameters;
     const params = {
     TableName: "project_data",    
     Key: {
-      project_id: data.project_id
+      project_id: data.id
     },
   };
 
@@ -19,6 +20,6 @@ export async function main(event, context) {
     }
   } catch (e) {
     console.log(e);
-    return failure({ status: false });
+    return failure({ status: false, error: e, event });
   }
 }
