@@ -127,4 +127,12 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  deleteProject:
+    handler: deleteProject.main
+    events:
+      - http:
+          path: deleteProject/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
   
