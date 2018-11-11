@@ -110,11 +110,11 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
-  updateProjectStatus:
-    handler: updateProjectStatus.main
+  updateProject:
+    handler: updateProject.main
     events:
       - http:
-          path: updateProjectStatus
+          path: updateProject
           method: put
           cors: true
           authorizer: aws_iam
