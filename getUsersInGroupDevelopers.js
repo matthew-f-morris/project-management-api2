@@ -1,30 +1,28 @@
 // var params = {
 //     GroupName: 'STRING_VALUE', /* required */
 //     UserPoolId: 'STRING_VALUE', /* required */
-//     Username: 'STRING_VALUE' /* required */
+//     Limit: 0,
+//     NextToken: 'STRING_VALUE'
 //   };
-//   cognitoidentityserviceprovider.adminAddUserToGroup(params, function(err, data) {
+//   cognitoidentityserviceprovider.listUsersInGroup(params, function(err, data) {
 //     if (err) console.log(err, err.stack); // an error occurred
 //     else     console.log(data);           // successful response
 //   });
 
-//import * as dynamoDbLib from "./libs/dynamodb-lib";
 //import { success, failure } from "./libs/response-lib";
 import AWS from "aws-sdk"
 
 export async function main(event, context) {
 
-    const data = JSON.parse(event.body)
     const params = {
-        GroupName: data.groupname,
+        GroupName: 'Developers',
         UserPoolId: 'eu-west-2_kKROnK0bk',
-        Username: data.username
     };    
 
     var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider()
 
     try {
-        const result = await cognitoidentityserviceprovider.adminAddUserToGroup(params).promise()
+        const result = await cognitoidentityserviceprovider.listUsersInGroup(params).promise()
         return success({data: result}); 
     } catch (e) {
         console.log(e);

@@ -16,15 +16,15 @@ export async function main(event, context) {
 
     const data = JSON.parse(event.body)
     const params = {
-        GroupName: data.groupname,
+        GroupName: 'Developers',
         UserPoolId: 'eu-west-2_kKROnK0bk',
         Username: data.username
     };    
 
-    var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider()
+    var provider = new AWS.AmazonIdentityManagementServiceClient()
 
     try {
-        const result = await cognitoidentityserviceprovider.adminAddUserToGroup(params).promise()
+        const result = await provider.Add
         return success({data: result}); 
     } catch (e) {
         console.log(e);
@@ -36,7 +36,7 @@ function buildResponse(statusCode, body){
     return {
         statusCode,
         headers: {
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "
             "Access-Control-Allow-Credentials": true
         },
         body: JSON.stringify(body)

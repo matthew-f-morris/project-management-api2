@@ -175,6 +175,22 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  getUsersInGroupDevelopers:
+    handler: getUsersInGroupDevelopers.main
+    events:
+      - http:
+          path: getUsersInGroupDevelopers
+          method: get
+          cors: true
+          authorizer: aws_iam
+  getUsersInGroupManagers:
+    handler: getUsersInGroupManagers.main
+    events:
+      - http:
+          path: getUsersInGroupManagers
+          method: get
+          cors: true
+          authorizer: aws_iam
 
 
   
