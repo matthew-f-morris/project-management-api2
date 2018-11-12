@@ -109,6 +109,36 @@
               "LogGroupName": "/aws/lambda/project-management-api2-prod-deleteProject"
             }
           },
+          "UpdateUserSkillsLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/project-management-api2-prod-updateUserSkills"
+            }
+          },
+          "GetProjectsManagerLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/project-management-api2-prod-getProjectsManager"
+            }
+          },
+          "AdminAddUserToGroupOnSignupLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/project-management-api2-prod-adminAddUserToGroupOnSignup"
+            }
+          },
+          "AdminAddUserToGroupLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/project-management-api2-prod-adminAddUserToGroup"
+            }
+          },
+          "AdmimRemoveUserFromGroupLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/project-management-api2-prod-admimRemoveUserFromGroup"
+            }
+          },
           "IamRoleLambdaExecution": {
             "Type": "AWS::IAM::Role",
             "Properties": {
@@ -184,6 +214,21 @@
                           },
                           {
                             "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-deleteProject:*"
+                          },
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-updateUserSkills:*"
+                          },
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-getProjectsManager:*"
+                          },
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-adminAddUserToGroupOnSignup:*"
+                          },
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-adminAddUserToGroup:*"
+                          },
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-admimRemoveUserFromGroup:*"
                           }
                         ]
                       },
@@ -228,6 +273,21 @@
                           },
                           {
                             "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-deleteProject:*:*"
+                          },
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-updateUserSkills:*:*"
+                          },
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-getProjectsManager:*:*"
+                          },
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-adminAddUserToGroupOnSignup:*:*"
+                          },
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-adminAddUserToGroup:*:*"
+                          },
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/project-management-api2-prod-admimRemoveUserFromGroup:*:*"
                           }
                         ]
                       },
@@ -259,7 +319,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-createUser",
               "Handler": "createUser.main",
@@ -278,14 +338,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateUserLambdaVersionLrLdPA6NBcAnSZLGIWC9QS5Gl0qYgVDr0xzuZiOU": {
+          "CreateUserLambdaVersionn4GGeGPXsDesrVA7bFC3oUyRnm5Two1CIffX7vyoc": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateUserLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "GetUserSkillsLambdaFunction": {
@@ -295,7 +355,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-getUserSkills",
               "Handler": "getUserSkills.main",
@@ -314,14 +374,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetUserSkillsLambdaVersion11ksewRcL8uyX0qO4ThIAFjomGTdg89PgKbKKaE4jo0": {
+          "GetUserSkillsLambdaVersionAOcI9J7MrXRNllJNs4adUD5mfg4FxYnROXtDqgE2m50": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetUserSkillsLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "GetAllUsersLambdaFunction": {
@@ -331,7 +391,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-getAllUsers",
               "Handler": "getAllUsers.main",
@@ -350,14 +410,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetAllUsersLambdaVersionxxeO2POA0XfkDN3Kp6rIqT2WOiVaWru3saCQOCaps4": {
+          "GetAllUsersLambdaVersion1mEln9imE25h5MmjzwEw3YLWCd54DuLRQ1Wqk0dM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetAllUsersLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "GetUserNameLambdaFunction": {
@@ -367,7 +427,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-getUserName",
               "Handler": "getUserName.main",
@@ -386,14 +446,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetUserNameLambdaVersionkvZdrXgCbh0EkRTOLmq7Hz6CZxLYHKbJcNtSFDiD7K0": {
+          "GetUserNameLambdaVersionE413BgFstwdvey8i9hHurEfizWOII7TnNjfyZqOxpM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetUserNameLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "GetDevelopersLambdaFunction": {
@@ -403,7 +463,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-getDevelopers",
               "Handler": "getDevelopers.main",
@@ -422,14 +482,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetDevelopersLambdaVersionKefjsGg82YYDh4Gk7NNVKzuknj3e5ZMzrrNP0uajL8": {
+          "GetDevelopersLambdaVersionVfcve4HAdnM8hcfyMlGupx72sWE05ChFA0sBSw2j9o": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetDevelopersLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "UpdateUserProjectsLambdaFunction": {
@@ -439,7 +499,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-updateUserProjects",
               "Handler": "updateUserProjects.main",
@@ -458,14 +518,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UpdateUserProjectsLambdaVersionrUQu8RNvP3WnJ5SZ6UmIVJbhC4o7jWSDv3QZ3GB9Lg": {
+          "UpdateUserProjectsLambdaVersionpNsSW3xt1MsFYeVEsinYZmgy5F60s1oxYfeY5igX0": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateUserProjectsLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "CreateProjectLambdaFunction": {
@@ -475,7 +535,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-createProject",
               "Handler": "createProject.main",
@@ -494,14 +554,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateProjectLambdaVersionJUiPdxrIuCwXLrahCtb0t5YBcMLVtQoewX2TORKI8iw": {
+          "CreateProjectLambdaVersionxmov037QXojmE3AoumerGl1fmwx3cdL80sWuXXIyA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateProjectLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "GetProjectLambdaFunction": {
@@ -511,7 +571,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-getProject",
               "Handler": "getProject.main",
@@ -530,14 +590,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetProjectLambdaVersiono0GTdNSp52A0CGhxsNvTxOc5Ite5t2nDVawt6omXPbQ": {
+          "GetProjectLambdaVersion0lUfkUfCm0cyRSjzGrxg9XPnBVzNStNXtWX2u95qoc": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetProjectLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "GetProjectsUserLambdaFunction": {
@@ -547,7 +607,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-getProjectsUser",
               "Handler": "getProjectsUser.main",
@@ -566,14 +626,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetProjectsUserLambdaVersionwkxwSE5E5H07VEITPpzpt58rBMEZSVRlTHrd6UBidkg": {
+          "GetProjectsUserLambdaVersionvlpoQsALpOgafQo5ErQq45DSifrsGZUghigCwk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetProjectsUserLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "UpdateProjectLambdaFunction": {
@@ -583,7 +643,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-updateProject",
               "Handler": "updateProject.main",
@@ -602,14 +662,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UpdateProjectLambdaVersionlDen8YBG8uI8fkBxIuPt5AV3ZLUKWBATdw1w9jviYhY": {
+          "UpdateProjectLambdaVersionUewupaRqK6vWnsQBritaYUu1jwA28e0chw97WrTBW8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateProjectLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "CreateProject2LambdaFunction": {
@@ -619,7 +679,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-createProject2",
               "Handler": "createProject2.main",
@@ -638,14 +698,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateProject2LambdaVersionzVby27g97nxfXz6ddsFa2cjC1Qi2VaPGwewfdIHo51E": {
+          "CreateProject2LambdaVersionMYFqYtiFwapjjLJ0u2luqnpsAJIYzyWfnoiReGQCbM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateProject2LambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "DeleteProjectLambdaFunction": {
@@ -655,7 +715,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z/project-management-api2.zip"
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
               },
               "FunctionName": "project-management-api2-prod-deleteProject",
               "Handler": "deleteProject.main",
@@ -674,14 +734,194 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DeleteProjectLambdaVersionJNJL4gWvdY9uc2lRGuKosHwzZJV853rXEOG6cDn2ZM": {
+          "DeleteProjectLambdaVersionyO8OlF3R1NRXABo5WCK6awVF1EtTpolgpCZ8N0QEto": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteProjectLambdaFunction"
               },
-              "CodeSha256": "5jquTXxFUxbk6y8QyxPkpCzSYYQ3OcF56gNcnjuSQc4="
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
+            }
+          },
+          "UpdateUserSkillsLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
+              },
+              "FunctionName": "project-management-api2-prod-updateUserSkills",
+              "Handler": "updateUserSkills.main",
+              "MemorySize": 1024,
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              },
+              "Runtime": "nodejs8.10",
+              "Timeout": 6
+            },
+            "DependsOn": [
+              "UpdateUserSkillsLogGroup",
+              "IamRoleLambdaExecution"
+            ]
+          },
+          "UpdateUserSkillsLambdaVersionTEQz1lgxGjVsLIv8KJXhFExhD0cWyhgjoF05bmU20s": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "UpdateUserSkillsLambdaFunction"
+              },
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
+            }
+          },
+          "GetProjectsManagerLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
+              },
+              "FunctionName": "project-management-api2-prod-getProjectsManager",
+              "Handler": "getProjectsManager.main",
+              "MemorySize": 1024,
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              },
+              "Runtime": "nodejs8.10",
+              "Timeout": 6
+            },
+            "DependsOn": [
+              "GetProjectsManagerLogGroup",
+              "IamRoleLambdaExecution"
+            ]
+          },
+          "GetProjectsManagerLambdaVersionYOePzrPZpcBLx2mbVhadUvDeLRcGTZjqUOFm8VU56Y": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "GetProjectsManagerLambdaFunction"
+              },
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
+            }
+          },
+          "AdminAddUserToGroupOnSignupLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
+              },
+              "FunctionName": "project-management-api2-prod-adminAddUserToGroupOnSignup",
+              "Handler": "adminAddUserToGroupOnSignup.main",
+              "MemorySize": 1024,
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              },
+              "Runtime": "nodejs8.10",
+              "Timeout": 6
+            },
+            "DependsOn": [
+              "AdminAddUserToGroupOnSignupLogGroup",
+              "IamRoleLambdaExecution"
+            ]
+          },
+          "AdminAddUserToGroupOnSignupLambdaVersionAlYKxBdIklqXXIqzReQzeH5XJGxYIJSXgQuDfxBi3o": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "AdminAddUserToGroupOnSignupLambdaFunction"
+              },
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
+            }
+          },
+          "AdminAddUserToGroupLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
+              },
+              "FunctionName": "project-management-api2-prod-adminAddUserToGroup",
+              "Handler": "adminAddUserToGroup.main",
+              "MemorySize": 1024,
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              },
+              "Runtime": "nodejs8.10",
+              "Timeout": 6
+            },
+            "DependsOn": [
+              "AdminAddUserToGroupLogGroup",
+              "IamRoleLambdaExecution"
+            ]
+          },
+          "AdminAddUserToGroupLambdaVersionJ3Mq59RuDTYOPBJoF1JEErQkxvb0tBx9mQVywo3Zk": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "AdminAddUserToGroupLambdaFunction"
+              },
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
+            }
+          },
+          "AdmimRemoveUserFromGroupLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z/project-management-api2.zip"
+              },
+              "FunctionName": "project-management-api2-prod-admimRemoveUserFromGroup",
+              "Handler": "adminRemoveUserFromGroup.main",
+              "MemorySize": 1024,
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              },
+              "Runtime": "nodejs8.10",
+              "Timeout": 6
+            },
+            "DependsOn": [
+              "AdmimRemoveUserFromGroupLogGroup",
+              "IamRoleLambdaExecution"
+            ]
+          },
+          "AdmimRemoveUserFromGroupLambdaVersionVAauDwejOtFaiKEV7TnvfvWSkytinU31cbtjx69rM": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "AdmimRemoveUserFromGroupLambdaFunction"
+              },
+              "CodeSha256": "w9omegIZG9OMknoD1jde+RYoprtZEx452UpTEdyMIzE="
             }
           },
           "ApiGatewayRestApi": {
@@ -720,6 +960,18 @@
                 ]
               },
               "PathPart": "getUserSkills",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceGetuserskillsIdVar": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Ref": "ApiGatewayResourceGetuserskills"
+              },
+              "PathPart": "{id}",
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
               }
@@ -923,6 +1175,93 @@
               }
             }
           },
+          "ApiGatewayResourceUpdateuserskills": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "updateUserSkills",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceGetprojectsmanager": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "getProjectsManager",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceGetprojectsmanagerIdVar": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Ref": "ApiGatewayResourceGetprojectsmanager"
+              },
+              "PathPart": "{id}",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceAdminaddusertogrouponsignup": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "adminAddUserToGroupOnSignup",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceAdminaddusertogroup": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "adminAddUserToGroup",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceAdminremoveuserfromgroup": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "adminRemoveUserFromGroup",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
           "ApiGatewayMethodCreateuserOptions": {
             "Type": "AWS::ApiGateway::Method",
             "Properties": {
@@ -970,7 +1309,7 @@
               }
             }
           },
-          "ApiGatewayMethodGetuserskillsOptions": {
+          "ApiGatewayMethodGetuserskillsIdVarOptions": {
             "Type": "AWS::ApiGateway::Method",
             "Properties": {
               "AuthorizationType": "NONE",
@@ -1010,7 +1349,7 @@
                 ]
               },
               "ResourceId": {
-                "Ref": "ApiGatewayResourceGetuserskills"
+                "Ref": "ApiGatewayResourceGetuserskillsIdVar"
               },
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
@@ -1393,6 +1732,241 @@
               }
             }
           },
+          "ApiGatewayMethodUpdateuserskillsOptions": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "HttpMethod": "OPTIONS",
+              "MethodResponses": [
+                {
+                  "StatusCode": "200",
+                  "ResponseParameters": {
+                    "method.response.header.Access-Control-Allow-Origin": true,
+                    "method.response.header.Access-Control-Allow-Headers": true,
+                    "method.response.header.Access-Control-Allow-Methods": true,
+                    "method.response.header.Access-Control-Allow-Credentials": true
+                  },
+                  "ResponseModels": {}
+                }
+              ],
+              "RequestParameters": {},
+              "Integration": {
+                "Type": "MOCK",
+                "RequestTemplates": {
+                  "application/json": "{statusCode:200}"
+                },
+                "ContentHandling": "CONVERT_TO_TEXT",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": "200",
+                    "ResponseParameters": {
+                      "method.response.header.Access-Control-Allow-Origin": "'*'",
+                      "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,PUT'",
+                      "method.response.header.Access-Control-Allow-Credentials": "'false'"
+                    },
+                    "ResponseTemplates": {
+                      "application/json": ""
+                    }
+                  }
+                ]
+              },
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceUpdateuserskills"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayMethodGetprojectsmanagerIdVarOptions": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "HttpMethod": "OPTIONS",
+              "MethodResponses": [
+                {
+                  "StatusCode": "200",
+                  "ResponseParameters": {
+                    "method.response.header.Access-Control-Allow-Origin": true,
+                    "method.response.header.Access-Control-Allow-Headers": true,
+                    "method.response.header.Access-Control-Allow-Methods": true,
+                    "method.response.header.Access-Control-Allow-Credentials": true
+                  },
+                  "ResponseModels": {}
+                }
+              ],
+              "RequestParameters": {},
+              "Integration": {
+                "Type": "MOCK",
+                "RequestTemplates": {
+                  "application/json": "{statusCode:200}"
+                },
+                "ContentHandling": "CONVERT_TO_TEXT",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": "200",
+                    "ResponseParameters": {
+                      "method.response.header.Access-Control-Allow-Origin": "'*'",
+                      "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+                      "method.response.header.Access-Control-Allow-Credentials": "'false'"
+                    },
+                    "ResponseTemplates": {
+                      "application/json": ""
+                    }
+                  }
+                ]
+              },
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceGetprojectsmanagerIdVar"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayMethodAdminaddusertogrouponsignupOptions": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "HttpMethod": "OPTIONS",
+              "MethodResponses": [
+                {
+                  "StatusCode": "200",
+                  "ResponseParameters": {
+                    "method.response.header.Access-Control-Allow-Origin": true,
+                    "method.response.header.Access-Control-Allow-Headers": true,
+                    "method.response.header.Access-Control-Allow-Methods": true,
+                    "method.response.header.Access-Control-Allow-Credentials": true
+                  },
+                  "ResponseModels": {}
+                }
+              ],
+              "RequestParameters": {},
+              "Integration": {
+                "Type": "MOCK",
+                "RequestTemplates": {
+                  "application/json": "{statusCode:200}"
+                },
+                "ContentHandling": "CONVERT_TO_TEXT",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": "200",
+                    "ResponseParameters": {
+                      "method.response.header.Access-Control-Allow-Origin": "'*'",
+                      "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                      "method.response.header.Access-Control-Allow-Credentials": "'false'"
+                    },
+                    "ResponseTemplates": {
+                      "application/json": ""
+                    }
+                  }
+                ]
+              },
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceAdminaddusertogrouponsignup"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayMethodAdminaddusertogroupOptions": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "HttpMethod": "OPTIONS",
+              "MethodResponses": [
+                {
+                  "StatusCode": "200",
+                  "ResponseParameters": {
+                    "method.response.header.Access-Control-Allow-Origin": true,
+                    "method.response.header.Access-Control-Allow-Headers": true,
+                    "method.response.header.Access-Control-Allow-Methods": true,
+                    "method.response.header.Access-Control-Allow-Credentials": true
+                  },
+                  "ResponseModels": {}
+                }
+              ],
+              "RequestParameters": {},
+              "Integration": {
+                "Type": "MOCK",
+                "RequestTemplates": {
+                  "application/json": "{statusCode:200}"
+                },
+                "ContentHandling": "CONVERT_TO_TEXT",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": "200",
+                    "ResponseParameters": {
+                      "method.response.header.Access-Control-Allow-Origin": "'*'",
+                      "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                      "method.response.header.Access-Control-Allow-Credentials": "'false'"
+                    },
+                    "ResponseTemplates": {
+                      "application/json": ""
+                    }
+                  }
+                ]
+              },
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceAdminaddusertogroup"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayMethodAdminremoveuserfromgroupOptions": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "HttpMethod": "OPTIONS",
+              "MethodResponses": [
+                {
+                  "StatusCode": "200",
+                  "ResponseParameters": {
+                    "method.response.header.Access-Control-Allow-Origin": true,
+                    "method.response.header.Access-Control-Allow-Headers": true,
+                    "method.response.header.Access-Control-Allow-Methods": true,
+                    "method.response.header.Access-Control-Allow-Credentials": true
+                  },
+                  "ResponseModels": {}
+                }
+              ],
+              "RequestParameters": {},
+              "Integration": {
+                "Type": "MOCK",
+                "RequestTemplates": {
+                  "application/json": "{statusCode:200}"
+                },
+                "ContentHandling": "CONVERT_TO_TEXT",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": "200",
+                    "ResponseParameters": {
+                      "method.response.header.Access-Control-Allow-Origin": "'*'",
+                      "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                      "method.response.header.Access-Control-Allow-Credentials": "'false'"
+                    },
+                    "ResponseTemplates": {
+                      "application/json": ""
+                    }
+                  }
+                ]
+              },
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceAdminremoveuserfromgroup"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
           "ApiGatewayMethodCreateuserPost": {
             "Type": "AWS::ApiGateway::Method",
             "Properties": {
@@ -1436,13 +2010,13 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayMethodGetuserskillsGet": {
+          "ApiGatewayMethodGetuserskillsIdVarGet": {
             "Type": "AWS::ApiGateway::Method",
             "Properties": {
               "HttpMethod": "GET",
               "RequestParameters": {},
               "ResourceId": {
-                "Ref": "ApiGatewayResourceGetuserskills"
+                "Ref": "ApiGatewayResourceGetuserskillsIdVar"
               },
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
@@ -1909,7 +2483,222 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1541971713758": {
+          "ApiGatewayMethodUpdateuserskillsPut": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "PUT",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceUpdateuserskills"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "AWS_IAM",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "UpdateUserSkillsLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodGetprojectsmanagerIdVarGet": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "GET",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceGetprojectsmanagerIdVar"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "AWS_IAM",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "GetProjectsManagerLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodAdminaddusertogrouponsignupPost": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "POST",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceAdminaddusertogrouponsignup"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "AWS_IAM",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "AdminAddUserToGroupOnSignupLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodAdminaddusertogroupPost": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "POST",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceAdminaddusertogroup"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "AWS_IAM",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "AdminAddUserToGroupLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodAdminremoveuserfromgroupPost": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "POST",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceAdminremoveuserfromgroup"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "AWS_IAM",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "AdmimRemoveUserFromGroupLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayDeployment1541991987395": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1919,7 +2708,7 @@
             },
             "DependsOn": [
               "ApiGatewayMethodCreateuserOptions",
-              "ApiGatewayMethodGetuserskillsOptions",
+              "ApiGatewayMethodGetuserskillsIdVarOptions",
               "ApiGatewayMethodGetallusersOptions",
               "ApiGatewayMethodUpdateuserprojectsOptions",
               "ApiGatewayMethodCreateprojectOptions",
@@ -1928,8 +2717,13 @@
               "ApiGatewayMethodUpdateprojectOptions",
               "ApiGatewayMethodCreateproject2Options",
               "ApiGatewayMethodDeleteprojectIdVarOptions",
+              "ApiGatewayMethodUpdateuserskillsOptions",
+              "ApiGatewayMethodGetprojectsmanagerIdVarOptions",
+              "ApiGatewayMethodAdminaddusertogrouponsignupOptions",
+              "ApiGatewayMethodAdminaddusertogroupOptions",
+              "ApiGatewayMethodAdminremoveuserfromgroupOptions",
               "ApiGatewayMethodCreateuserPost",
-              "ApiGatewayMethodGetuserskillsGet",
+              "ApiGatewayMethodGetuserskillsIdVarGet",
               "ApiGatewayMethodGetallusersGet",
               "ApiGatewayMethodGetusernameIdVarGet",
               "ApiGatewayMethodGetdevelopersGet",
@@ -1939,7 +2733,12 @@
               "ApiGatewayMethodGetprojectsuserIdVarGet",
               "ApiGatewayMethodUpdateprojectPut",
               "ApiGatewayMethodCreateproject2Post",
-              "ApiGatewayMethodDeleteprojectIdVarDelete"
+              "ApiGatewayMethodDeleteprojectIdVarDelete",
+              "ApiGatewayMethodUpdateuserskillsPut",
+              "ApiGatewayMethodGetprojectsmanagerIdVarGet",
+              "ApiGatewayMethodAdminaddusertogrouponsignupPost",
+              "ApiGatewayMethodAdminaddusertogroupPost",
+              "ApiGatewayMethodAdminremoveuserfromgroupPost"
             ]
           },
           "CreateUserLambdaPermissionApiGateway": {
@@ -2505,6 +3304,241 @@
                 ]
               }
             }
+          },
+          "UpdateUserSkillsLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "UpdateUserSkillsLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "apigateway.",
+                    {
+                      "Ref": "AWS::URLSuffix"
+                    }
+                  ]
+                ]
+              },
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "GetProjectsManagerLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "GetProjectsManagerLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "apigateway.",
+                    {
+                      "Ref": "AWS::URLSuffix"
+                    }
+                  ]
+                ]
+              },
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "AdminAddUserToGroupOnSignupLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "AdminAddUserToGroupOnSignupLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "apigateway.",
+                    {
+                      "Ref": "AWS::URLSuffix"
+                    }
+                  ]
+                ]
+              },
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "AdminAddUserToGroupLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "AdminAddUserToGroupLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "apigateway.",
+                    {
+                      "Ref": "AWS::URLSuffix"
+                    }
+                  ]
+                ]
+              },
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "AdmimRemoveUserFromGroupLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "AdmimRemoveUserFromGroupLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "apigateway.",
+                    {
+                      "Ref": "AWS::URLSuffix"
+                    }
+                  ]
+                ]
+              },
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
           }
         },
         "Outputs": {
@@ -2516,73 +3550,103 @@
           "CreateUserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateUserLambdaVersionLrLdPA6NBcAnSZLGIWC9QS5Gl0qYgVDr0xzuZiOU"
+              "Ref": "CreateUserLambdaVersionn4GGeGPXsDesrVA7bFC3oUyRnm5Two1CIffX7vyoc"
             }
           },
           "GetUserSkillsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetUserSkillsLambdaVersion11ksewRcL8uyX0qO4ThIAFjomGTdg89PgKbKKaE4jo0"
+              "Ref": "GetUserSkillsLambdaVersionAOcI9J7MrXRNllJNs4adUD5mfg4FxYnROXtDqgE2m50"
             }
           },
           "GetAllUsersLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetAllUsersLambdaVersionxxeO2POA0XfkDN3Kp6rIqT2WOiVaWru3saCQOCaps4"
+              "Ref": "GetAllUsersLambdaVersion1mEln9imE25h5MmjzwEw3YLWCd54DuLRQ1Wqk0dM"
             }
           },
           "GetUserNameLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetUserNameLambdaVersionkvZdrXgCbh0EkRTOLmq7Hz6CZxLYHKbJcNtSFDiD7K0"
+              "Ref": "GetUserNameLambdaVersionE413BgFstwdvey8i9hHurEfizWOII7TnNjfyZqOxpM"
             }
           },
           "GetDevelopersLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetDevelopersLambdaVersionKefjsGg82YYDh4Gk7NNVKzuknj3e5ZMzrrNP0uajL8"
+              "Ref": "GetDevelopersLambdaVersionVfcve4HAdnM8hcfyMlGupx72sWE05ChFA0sBSw2j9o"
             }
           },
           "UpdateUserProjectsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateUserProjectsLambdaVersionrUQu8RNvP3WnJ5SZ6UmIVJbhC4o7jWSDv3QZ3GB9Lg"
+              "Ref": "UpdateUserProjectsLambdaVersionpNsSW3xt1MsFYeVEsinYZmgy5F60s1oxYfeY5igX0"
             }
           },
           "CreateProjectLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateProjectLambdaVersionJUiPdxrIuCwXLrahCtb0t5YBcMLVtQoewX2TORKI8iw"
+              "Ref": "CreateProjectLambdaVersionxmov037QXojmE3AoumerGl1fmwx3cdL80sWuXXIyA"
             }
           },
           "GetProjectLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetProjectLambdaVersiono0GTdNSp52A0CGhxsNvTxOc5Ite5t2nDVawt6omXPbQ"
+              "Ref": "GetProjectLambdaVersion0lUfkUfCm0cyRSjzGrxg9XPnBVzNStNXtWX2u95qoc"
             }
           },
           "GetProjectsUserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetProjectsUserLambdaVersionwkxwSE5E5H07VEITPpzpt58rBMEZSVRlTHrd6UBidkg"
+              "Ref": "GetProjectsUserLambdaVersionvlpoQsALpOgafQo5ErQq45DSifrsGZUghigCwk"
             }
           },
           "UpdateProjectLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateProjectLambdaVersionlDen8YBG8uI8fkBxIuPt5AV3ZLUKWBATdw1w9jviYhY"
+              "Ref": "UpdateProjectLambdaVersionUewupaRqK6vWnsQBritaYUu1jwA28e0chw97WrTBW8"
             }
           },
           "CreateProject2LambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateProject2LambdaVersionzVby27g97nxfXz6ddsFa2cjC1Qi2VaPGwewfdIHo51E"
+              "Ref": "CreateProject2LambdaVersionMYFqYtiFwapjjLJ0u2luqnpsAJIYzyWfnoiReGQCbM"
             }
           },
           "DeleteProjectLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteProjectLambdaVersionJNJL4gWvdY9uc2lRGuKosHwzZJV853rXEOG6cDn2ZM"
+              "Ref": "DeleteProjectLambdaVersionyO8OlF3R1NRXABo5WCK6awVF1EtTpolgpCZ8N0QEto"
+            }
+          },
+          "UpdateUserSkillsLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "UpdateUserSkillsLambdaVersionTEQz1lgxGjVsLIv8KJXhFExhD0cWyhgjoF05bmU20s"
+            }
+          },
+          "GetProjectsManagerLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "GetProjectsManagerLambdaVersionYOePzrPZpcBLx2mbVhadUvDeLRcGTZjqUOFm8VU56Y"
+            }
+          },
+          "AdminAddUserToGroupOnSignupLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "AdminAddUserToGroupOnSignupLambdaVersionAlYKxBdIklqXXIqzReQzeH5XJGxYIJSXgQuDfxBi3o"
+            }
+          },
+          "AdminAddUserToGroupLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "AdminAddUserToGroupLambdaVersionJ3Mq59RuDTYOPBJoF1JEErQkxvb0tBx9mQVywo3Zk"
+            }
+          },
+          "AdmimRemoveUserFromGroupLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "AdmimRemoveUserFromGroupLambdaVersionVAauDwejOtFaiKEV7TnvfvWSkytinU31cbtjx69rM"
             }
           },
           "ServiceEndpoint": {
@@ -2684,7 +3748,7 @@
         "events": [
           {
             "http": {
-              "path": "getUserSkills",
+              "path": "getUserSkills/{id}",
               "method": "get",
               "cors": {
                 "origins": [
@@ -3114,11 +4178,226 @@
         "timeout": 6,
         "runtime": "nodejs8.10",
         "vpc": {}
+      },
+      "updateUserSkills": {
+        "handler": "updateUserSkills.main",
+        "events": [
+          {
+            "http": {
+              "path": "updateUserSkills",
+              "method": "put",
+              "cors": {
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
+                "methods": [
+                  "OPTIONS",
+                  "PUT"
+                ],
+                "headers": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent"
+                ],
+                "allowCredentials": false
+              },
+              "authorizer": {
+                "type": "AWS_IAM",
+                "identitySource": "method.request.header.Authorization"
+              },
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "project-management-api2-prod-updateUserSkills",
+        "package": {
+          "artifact": ".serverless\\project-management-api2.zip"
+        },
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs8.10",
+        "vpc": {}
+      },
+      "getProjectsManager": {
+        "handler": "getProjectsManager.main",
+        "events": [
+          {
+            "http": {
+              "path": "getProjectsManager/{id}",
+              "method": "get",
+              "cors": {
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
+                "methods": [
+                  "OPTIONS",
+                  "GET"
+                ],
+                "headers": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent"
+                ],
+                "allowCredentials": false
+              },
+              "authorizer": {
+                "type": "AWS_IAM",
+                "identitySource": "method.request.header.Authorization"
+              },
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "project-management-api2-prod-getProjectsManager",
+        "package": {
+          "artifact": ".serverless\\project-management-api2.zip"
+        },
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs8.10",
+        "vpc": {}
+      },
+      "adminAddUserToGroupOnSignup": {
+        "handler": "adminAddUserToGroupOnSignup.main",
+        "events": [
+          {
+            "http": {
+              "path": "adminAddUserToGroupOnSignup",
+              "method": "post",
+              "cors": {
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
+                "methods": [
+                  "OPTIONS",
+                  "POST"
+                ],
+                "headers": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent"
+                ],
+                "allowCredentials": false
+              },
+              "authorizer": {
+                "type": "AWS_IAM",
+                "identitySource": "method.request.header.Authorization"
+              },
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "project-management-api2-prod-adminAddUserToGroupOnSignup",
+        "package": {
+          "artifact": ".serverless\\project-management-api2.zip"
+        },
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs8.10",
+        "vpc": {}
+      },
+      "adminAddUserToGroup": {
+        "handler": "adminAddUserToGroup.main",
+        "events": [
+          {
+            "http": {
+              "path": "adminAddUserToGroup",
+              "method": "post",
+              "cors": {
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
+                "methods": [
+                  "OPTIONS",
+                  "POST"
+                ],
+                "headers": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent"
+                ],
+                "allowCredentials": false
+              },
+              "authorizer": {
+                "type": "AWS_IAM",
+                "identitySource": "method.request.header.Authorization"
+              },
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "project-management-api2-prod-adminAddUserToGroup",
+        "package": {
+          "artifact": ".serverless\\project-management-api2.zip"
+        },
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs8.10",
+        "vpc": {}
+      },
+      "admimRemoveUserFromGroup": {
+        "handler": "adminRemoveUserFromGroup.main",
+        "events": [
+          {
+            "http": {
+              "path": "adminRemoveUserFromGroup",
+              "method": "post",
+              "cors": {
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
+                "methods": [
+                  "OPTIONS",
+                  "POST"
+                ],
+                "headers": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent"
+                ],
+                "allowCredentials": false
+              },
+              "authorizer": {
+                "type": "AWS_IAM",
+                "identitySource": "method.request.header.Authorization"
+              },
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "project-management-api2-prod-admimRemoveUserFromGroup",
+        "package": {
+          "artifact": ".serverless\\project-management-api2.zip"
+        },
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs8.10",
+        "vpc": {}
       }
     }
   },
   "package": {
-    "artifactDirectoryName": "serverless/project-management-api2/prod/1541971713571-2018-11-11T21:28:33.571Z",
+    "artifactDirectoryName": "serverless/project-management-api2/prod/1541991986936-2018-11-12T03:06:26.936Z",
     "artifact": ""
   }
 }

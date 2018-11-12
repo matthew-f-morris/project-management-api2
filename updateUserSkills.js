@@ -2,22 +2,22 @@ import * as dynamoDbLib from "./libs/dynamodb-lib";
 import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context) {
-    const data = event.pathParameters
+    const data = (event.body)
     const params = {
     TableName: "user_data",    
     Key: {
-      userId: data.userId
+      userId: data.userId,
     },
-    ProjectionExpression: "skills",
+    UpdateExpression: "SET skills = :skills",
+    ExpressionAttributeValues: {
+      ":skills": data.skills || null,
+    },
+    ReturnValues:"ALL_NEW"
   };
 
   try {
-    const result = await dynamoDbLib.call("get", params);
-    if (result.Item) {
-      return success(result.Item);     
-    } else {
-      return failure({ status: false, error: "Item not found." });
-    }
+    const result = await dynamoDbLib.call("update", params);
+    return success({ status: true});     
   } catch (e) {
     console.log(e);
     return failure({ status: false });

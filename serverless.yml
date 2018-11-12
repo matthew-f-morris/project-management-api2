@@ -52,7 +52,7 @@ functions:
     handler: getUserSkills.main
     events:
       - http:
-          path: getUserSkills
+          path: getUserSkills/{id}
           method: get
           cors: true
           authorizer: aws_iam
@@ -135,4 +135,46 @@ functions:
           method: delete
           cors: true
           authorizer: aws_iam
+  updateUserSkills:
+    handler: updateUserSkills.main
+    events:
+      - http:
+          path: updateUserSkills
+          method: put
+          cors: true
+          authorizer: aws_iam
+  getProjectsManager:
+    handler: getProjectsManager.main
+    events:
+      - http:
+          path: getProjectsManager/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+  adminAddUserToGroupOnSignup:
+    handler: adminAddUserToGroupOnSignup.main
+    events:
+      - http:
+          path: adminAddUserToGroupOnSignup
+          method: post
+          cors: true
+          authorizer: aws_iam
+  adminAddUserToGroup:
+    handler: adminAddUserToGroup.main
+    events:
+      - http:
+          path: adminAddUserToGroup
+          method: post
+          cors: true
+          authorizer: aws_iam
+  admimRemoveUserFromGroup:
+    handler: adminRemoveUserFromGroup.main
+    events:
+      - http:
+          path: adminRemoveUserFromGroup
+          method: post
+          cors: true
+          authorizer: aws_iam
+
+
   
