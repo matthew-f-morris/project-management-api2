@@ -78,6 +78,13 @@ functions:
           path: getDevelopers
           method: get
           authorizer: aws_iam
+  getProjectManagers:
+    handler: getProjectManagers.main
+    events:
+      - http:
+          path: getProjectManagers
+          method: get
+          authorizer: aws_iam        
   updateUserProjects:
     handler: updateUserProjects.main
     events:

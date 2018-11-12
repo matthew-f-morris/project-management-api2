@@ -3,7 +3,7 @@ import AWS from "aws-sdk"
 export async function main(event, context) {
 
     const params = {
-        "GroupName": "Developers",
+        "GroupName": "ProjectManagers",
         "UserPoolId": "eu-west-2_kKROnK0bk"
     };
 
@@ -36,5 +36,3 @@ export function success(body){
 export function failure(body){
     return buildResponse(500, body);
 }
-
-//need to make this specific for developers

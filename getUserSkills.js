@@ -6,7 +6,7 @@ export async function main(event, context) {
     const params = {
     TableName: "user_data",    
     Key: {
-      userId: data.userId
+      userId: data.id
     },
     ProjectionExpression: "skills",
   };
